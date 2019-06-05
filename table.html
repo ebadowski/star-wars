@@ -51,6 +51,19 @@
     $.get("/api/characters/", function (data) {
         console.log(data);
 
+        var body = $('<tbody>');
+
+        for (var i in data) {
+            var row = $('<tr>');
+            $('<th scope="row">').text(i + 1).appendTo(row);
+            $('<td>').text(data[i].name).appendTo(row);
+            $('<td>').text(data[i].role).appendTo(row);
+            $('<td>').text(data[i].age).appendTo(row);
+            $('<td>').text(data[i].forcePoints).appendTo(row);
+            row.appendTo(body);
+        }
+
+        body.appendTo('.table');
     });
 
 </script>
