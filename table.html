@@ -55,7 +55,7 @@
 
         for (var i in data) {
             var row = $('<tr>');
-            $('<th scope="row">').text(i + 1).appendTo(row);
+            $('<th scope="row">').text(parseInt(i) + 1).appendTo(row);
             $('<td>').text(data[i].name).appendTo(row);
             $('<td>').text(data[i].role).appendTo(row);
             $('<td>').text(data[i].age).appendTo(row);
